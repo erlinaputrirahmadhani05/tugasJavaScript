@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Real-Time Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #clock {
+            font-size: 24px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="clock"></div>
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var date = now.toISOString().slice(0,10);
+                var time = now.toLocaleTimeString();
+                document.getElementById('clock').innerHTML = "Tanggal : " + date + "<br>Waktu  : " + time;
+            }
+            // fungsi untuk menampikan setiap detik
+            setInterval(updateClock, 1000);
+            // untuk menampilkan waktu saat halaman pertama kali dimuat
+            updateClock();
+        </script>
+    </body>
+</html>

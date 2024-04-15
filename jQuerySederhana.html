@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Box</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #colorfulBox {
+            width: 500px;
+            height: 350px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 350px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Efek transisi untuk perubahan warna latar belakang */
+        }
+    </style>
+</head>
+<body>
+    <div id="colorfulBox">
+        Tekan ini & kamu akan mendapatkan warna yang berbeda!
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#colorfulBox").click(function(){
+                // membuat warna secara acak
+                var randomColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                $(this).css("background-color", randomColor);
+            });
+        });
+    </script>
+</body>
+</html>
